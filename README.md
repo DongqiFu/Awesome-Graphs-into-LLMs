@@ -102,21 +102,6 @@ Task: >
 
 ---
 
-### Notation
-
-- $e(t)$ — #edges at time $t$  
-- $n(t)$ — #nodes at time $t$  
-- $H(u)$ — local closure coefficient  
-- $T(u)$ — number of triangles including node $u$  
-- $W^g(u)$ — #potential triads around $u$  
-
----
-
-**Citations:** Leskovec et al. 2005, 2008; Benson et al. 2018; Yin et al. 2019; Do et al. 2020; Eikmeier & Gleich 2017; Comrie & Kleinberg 2021; Shi et al. 2017; Massaro et al. 2020.
-
-
----
-
 ## 🌐 Citation  
 
 If you find this repository useful, please consider citing our paper:
