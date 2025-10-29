@@ -77,18 +77,43 @@ Task: >
 ## 🚀 Summary of Graph Parametric Representations (i.e., Section 4)
 
 | Input | Law | Parameter | Scope | Order | Temporality | Description |
-|---|---|---|---|---|---|---|
-| Graphs | Densification Law [34] | Density degree α | Macro | Low | Dynamic | e(t) ∝ n(t)^α, α ∈ [1, 2], e(t) is number of edges |
-| Graphs | Shrinking Law [34] | Effective diameter d | Macro | Low | Dynamic | dt+1 < dt, diameter decreases as network grows |
-| Graphs | Motif Differing Law(1) [45] | Number of motifs n | Macro | High | Dynamic | Different domains have different motif counts |
-| Graphs | Egonet Differing Law [4] | Egonet features X | Macro | High | Static | Features differ across domains |
-| Graphs | Simplicial Closure Law [4] | Closure prob. p | Macro | High | Static | p increases with tie strength |
-| Graphs | Spectral Power Law [14] | Degree/eigen/SVD dist. | Macro | High | Static | Distributions often follow power-law |
-| Graphs | Edge Attachment Law [33] | Node degree d | Micro | Low | Dynamic | pe(d) ∝ d |
-| Graphs | Triangle Closure Law [25] | Triangular edges | Micro | Low | Dynamic | Stronger ties → less weakening |
-| Hypergraphs | Densification Law [31] | α | Macro | High | Dynamic | e(t) ∝ n(t)^α, α ≥ 1 |
-| Hypergraphs | Shrinking Law [31] | Diameter d | Macro | High | Dynamic | Diameter decreases as graph grows |
-| Heterographs | Densification Law [58] | α, meta-path count | Macro | Low | Dynamic | Some meta-paths densify |
+|:--|:--|:--|:--|:--|:--|:--|
+| **Graphs** | [Densification Law](https://dl.acm.org/doi/10.1145/1081870.1081893) | Density degree $\\alpha$ | Macro | Low | Dynamic | $e(t) \\propto n(t)^{\\alpha},\\; \\alpha\\in[1,2]$, where $e(t)$ is #edges at time $t$ |
+|  | [Shrinking Diameter Law](https://dl.acm.org/doi/10.1145/1081870.1081893) | Effective diameter $d$ | Macro | Low | Dynamic | $d_{t+1} < d_t$, diameter decreases as network grows |
+|  | [Motif Differing Law (1)](https://dl.acm.org/doi/10.1145/3018661.3018733) | Similar motif counts $n$ | Macro | High | Dynamic | $n_1 \\ne n_2$ for different domains |
+|  | [Motif Differing Law (2)](https://dl.acm.org/doi/10.1145/3018661.3018733) | Motif timestamp $t$ | Macro | High | Dynamic | $t_1 \\ne t_2$ for different motif types |
+|  | [Egonet Differing Law](https://doi.org/10.1073/pnas.1800683115) | Egonet features $X$ | Macro | High | Static | Egonet statistics $X_1\\ne X_2$ across domains |
+|  | [Simplicial Closure Law](https://doi.org/10.1073/pnas.1800683115) | Closure probability $p$ | Macro | High | Static | $p$ increases with tie strength or additional relations |
+|  | [Spectral Power Law](https://dl.acm.org/doi/10.1145/3184558.3191527) | Degree/SVD/Eigen distributions | Macro | High | Static | These spectral distributions often follow power law |
+|  | [Edge Attachment Law](https://snap.stanford.edu/class/cs224w-readings/leskovec08patterns.pdf) | Node degree $d$ and edge creation $p_e(d)$ | Micro | Low | Dynamic | $p_e(d) \\propto d$ for nodes of degree $d$ |
+|  | [Triangle Closure Law (1)](https://snap.stanford.edu/class/cs224w-readings/leskovec08patterns.pdf) | Edges $e_1,e_2,e_3$ | Micro | Low | Dynamic | Strong $e_3$ ⇒ $e_1,e_2$ less likely to weaken |
+|  | [Triangle Closure Law (2)](https://snap.stanford.edu/class/cs224w-readings/leskovec08patterns.pdf) | Edges $e_1,e_2,e_3$ | Micro | Low | Dynamic | Strong $e_1,e_2$ ⇒ unlikely to weaken |
+|  | [Local Closure Law](https://doi.org/10.1007/s41109-020-00283-0) | Local closure coef. $H(u)$ | Micro | Low | Static | $H(u)=\\frac{2T(u)}{W^g(u)}$, see Appendix A |
+|  | [Spectral Density Law](https://epubs.siam.org/doi/10.1137/17M1114731) | Density of states $\\mu(\\lambda)$ | Macro | High | Static | $\\mu(\\lambda)=\\frac{1}{N}\\sum_i\\delta(\\lambda-\\lambda_i)$ |
+| | [Motif Activity Law](https://arxiv.org/abs/2112.03498) | Motif type / reappear rate | Micro | High | Dynamic | Motifs retain type and reappear at rate $r$ |
+| **Hypergraphs** | [Degree Distribution Law](https://doi.org/10.1007/978-3-030-47436-2_7) | Node degree, link prob. | Macro | High | Dynamic | High-degree nodes more likely to form new links |
+|  | [SVD Distribution Law](https://doi.org/10.1007/978-3-030-47436-2_7) | Singular value distribution | Macro | High | Static | Singular value spectra often heavy-tailed |
+|  | [Diminishing Overlaps](https://dl.acm.org/doi/10.1145/3394486.3403338) | Overlap density DoI($H(t)$) | Macro | High | Dynamic | Overall hyperedge overlap decreases with $t$ |
+|  | [Densification Law (Hypergraph)](https://dl.acm.org/doi/10.1145/3394486.3403338) | Density degree $\\alpha$ | Macro | High | Dynamic | $e(t) \\propto n(t)^{\\alpha},\\; \\alpha\\ge1$ |
+|  | [Shrinking Law (Hypergraph)](https://dl.acm.org/doi/10.1145/3394486.3403338) | Effective diameter $d$ | Macro | High | Dynamic | $d_{t+1}<d_t$ as hypergraph grows |
+|  | [Edge Interacting Law](https://doi.org/10.1016/j.physa.2018.12.030) | Interaction rate | Micro | High | Dynamic | Temporally adjacent edges have similar activity |
+| **Heterographs** | [Densification Law (Hetero)](https://ieeexplore.ieee.org/document/7934374) | $\\alpha$, meta-path count | Macro | Low | Dynamic | Some meta-paths follow $e(t)\\propto n(t)^\\alpha$ |
+|  | [Non-densification Law](https://ieeexplore.ieee.org/document/7934374) | $\\alpha$, meta-path count | Macro | Low | Dynamic | Some meta-paths do *not* follow densification law |
+
+---
+
+### Notation
+
+- $e(t)$ — #edges at time $t$  
+- $n(t)$ — #nodes at time $t$  
+- $H(u)$ — local closure coefficient  
+- $T(u)$ — number of triangles including node $u$  
+- $W^g(u)$ — #potential triads around $u$  
+
+---
+
+**Citations:** Leskovec et al. 2005, 2008; Benson et al. 2018; Yin et al. 2019; Do et al. 2020; Eikmeier & Gleich 2017; Comrie & Kleinberg 2021; Shi et al. 2017; Massaro et al. 2020.
+
 
 ---
 
