@@ -76,7 +76,7 @@ Task: >
 
 ---
 
-## 🚀 Summary of Graph Parametric Representations
+## 🚀 Summary of Graph Parametric Representations (i.e., Section 4)
 
 | Input | Law | Parameter | Scope | Order | Temporality | Description |
 |---|---|---|---|---|---|---|
