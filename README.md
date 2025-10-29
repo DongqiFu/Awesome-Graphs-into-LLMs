@@ -51,7 +51,7 @@
 3. **Contextual Injection** – Feed as prompt prefix, retrieval snippet, or adapter input.  
 4. **Reasoning Alignment** – LLM uses interpretable parameters for explainable graph reasoning.
 
-### Example Prompt
+### 📚 A Prompt Example
 
 ```yaml
 GraphSummary:
