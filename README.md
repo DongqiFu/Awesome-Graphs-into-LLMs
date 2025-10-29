@@ -1,9 +1,7 @@
 # 🧠 Awesome Graphs into LLMs  
 *A curated survey and resource list on bringing complex geometric information to Large Language Models (LLMs)*  
 
-[![Paper](https://img.shields.io/badge/Paper-LOG%202025-deepgreen)](https://arxiv.org/abs/25XX.XXXXX)  
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  
-[![Survey](https://img.shields.io/badge/Survey-Graph%20Parametric%20Representation-purple)](#survey)  
+[![Paper](https://img.shields.io/badge/Paper-LOG%202025-deepgreen)](https://arxiv.org/abs/25XX.XXXXX)  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  [![Survey](https://img.shields.io/badge/Survey-Graph%20Parametric%20Representation-purple)](#survey)  
 
 ---
 
