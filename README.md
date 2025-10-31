@@ -107,7 +107,7 @@ Task: >
 If you find this repository useful, please consider citing our paper:
 
 ```bibtex
-@inproceedings{fu2025graphlaw,
+@inproceedings{fu2025bring,
   title={Bring Complex Geometric Information to LLMs: A Positional Survey of Graph Parametric Representation},
   author={Dongqi Fu and Liri Fang and Zihao Li and Zhe Xu and Hanghang Tong and Vetle I. Torvik and Jingrui He},
   booktitle={Proceedings of the Fourth Learning on Graphs Conference (LoG 2025)},
